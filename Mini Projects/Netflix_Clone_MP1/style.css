@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background-image: url(assets/background.jpg);
+    position: relative;
+    height: 80vh;
+}
+
+.main .box{
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.44;
+    background-color: black;
+}
+
+.main .box .nav{
+    height: 10px;
+}

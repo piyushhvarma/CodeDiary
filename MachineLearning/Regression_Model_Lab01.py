@@ -16,3 +16,25 @@ plt.title("Housing Prices")
 plt.ylabel("Prices (in 1000s of dollars)")
 plt.xlabel("Size (1000 sqft)")
 plt.show()
+
+w = 100
+b = 100 
+print(f"w : {w}")
+print(f"b : {b}")
+
+def calculate_model_output(w,b,x):
+    m = x.shape
+    f_wb = np.zeros(m)
+    for i in range(len(x)):
+        f_wb[i] = w * x[i] + b
+    return f_wb    
+
+
+tmp_f_wb = calculate_model_output(w,b,x_train)
+plt.plot(x_train, tmp_f_wb, c = 'x', label='production')
+plt.scatter(x_train,y_train, marker='y',c='r', label='original values')
+plt.title("Housing Prices")
+plt.ylabel("Prices (in 1000s of dollars)")
+plt.xlabel("Size (1000 sqft)")
+plt.legend()
+plt.show()

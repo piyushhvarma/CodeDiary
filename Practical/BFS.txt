@@ -1,0 +1,62 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+// Function to perform BFS
+void bfs(int start, vector<vector<int>>& adjList, vector<bool>& visited) {
+    // Create a queue for BFS
+    queue<int> q;
+    q.push(start);  // Enqueue the starting node
+    visited[start] = true;
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        cout << node << " "; // Visit the node (print)
+
+        // Enqueue all unvisited adjacent nodes
+        for (int adjNode : adjList[node]) {
+            if (!visited[adjNode]) {
+                visited[adjNode] = true;
+                q.push(adjNode);
+            }
+        }
+    }
+}
+
+// Function to initialize the BFS traversal
+void bfsTraversal(int n, vector<vector<int>>& adjList) {
+    // Create a visited array to mark all nodes as unvisited initially
+    vector<bool> visited(n, false);
+
+    // Perform BFS traversal for all unvisited nodes
+    for (int i = 0; i < n; i++) {
+        if (!visited[i]) {
+            bfs(i, adjList, visited); // Start BFS from unvisited nodes
+        }
+    }
+}
+
+int main() {
+    int n = 5; // Number of vertices
+    // Create an adjacency list for the graph
+    vector<vector<int>> adjList(n);
+
+    // Add edges to the adjacency list
+    adjList[0].push_back(1);
+    adjList[0].push_back(4);
+    adjList[1].push_back(0);
+    adjList[1].push_back(2);
+    adjList[1].push_back(3);
+    adjList[2].push_back(1);
+    adjList[3].push_back(1);
+    adjList[3].push_back(4);
+    adjList[4].push_back(0);
+    adjList[4].push_back(3);
+
+    cout << "BFS Traversal: ";
+    bfsTraversal(n, adjList);  // Start BFS traversal from all unvisited nodes
+
+    return 0;
+}

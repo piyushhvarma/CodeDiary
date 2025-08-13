@@ -1,0 +1,77 @@
+
+------------------------------
+PART 1: RUNNING C PROGRAMS
+------------------------------
+
+1. Open Terminal
+   - Use the shortcut: Ctrl + Alt + T
+   - Or search for "Terminal" in the application menu.
+
+2. Navigate to the directory where your C file is saved:
+   Example:
+   cd ~/Documents
+
+3. Compile your C program using gcc:
+   gcc filename.c -o output_name
+
+   Example:
+   gcc hello.c -o hello
+
+   For programs using POSIX threads:
+   gcc thread_program.c -o thread_program -lpthread
+
+4. Run the compiled executable:
+   ./output_name
+
+   Example:
+   ./hello
+
+5. Optional: Install GCC if not already installed:
+   sudo apt update
+   sudo apt install build-essential
+
+------------------------------
+PART 2: RUNNING SHELL SCRIPTS
+------------------------------
+
+1. Open Terminal.
+
+2. Navigate to the folder where your shell script (.sh file) is located:
+   cd ~/Documents
+
+3. Make the script executable:
+   chmod +x script_name.sh
+
+   Example:
+   chmod +x myscript.sh
+
+4. Run the script:
+   ./script_name.sh
+
+   Example:
+   ./myscript.sh
+
+5. Alternative method (without chmod):
+   bash script_name.sh
+
+   Example:
+   bash myscript.sh
+
+------------------------------
+EXTRA TIPS
+------------------------------
+
+- To list files in the current directory:
+  ls
+
+- To open and edit files using nano (terminal-based editor):
+  nano filename.c
+  nano script.sh
+
+- To exit nano: Press Ctrl + X, then Y to save, Enter to confirm.
+
+------------------------------
+CREDITS
+------------------------------
+Made for OS Lab Practice
+Usage: Practical Exams, Assignments, Viva Preparation
